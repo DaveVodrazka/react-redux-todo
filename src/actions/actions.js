@@ -29,3 +29,20 @@ export function toggleTodo(id) {
     id
   }
 }
+
+export function showClass(done, show) {
+    if (done) {
+      if (show == "all" || show == "done") {
+        return "done";
+      } else if (show == "active") {
+        return "hide";
+      }
+      return "done";
+    } else {
+      if (show == "all" || show == "active") {
+        return "undone";
+      } else {
+        return "hide";
+      }
+    }
+  }

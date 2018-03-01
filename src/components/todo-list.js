@@ -2,7 +2,7 @@ import React from 'react'
 
 import Todo from './todo'
 
-const TodoList = ({ todos, onTodoClick, onDeleteClick }) => {
+const TodoList = ({ show, todos, onTodoClick, onDeleteClick }) => {
   return(
     <ul>
       {todos.map((todo) => (
@@ -12,6 +12,7 @@ const TodoList = ({ todos, onTodoClick, onDeleteClick }) => {
           onClick={() => onTodoClick(todo.id)}
           onDeleteClick={(e) => onDeleteClick(todo.id, e)}
           done={todo.done}
+          show={show}
         />
       ))}
     </ul>

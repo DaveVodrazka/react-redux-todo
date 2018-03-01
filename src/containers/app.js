@@ -16,6 +16,7 @@ class App extends React.Component {
           todos={this.props.todos}
           onTodoClick={this.props.onTodoClick}
           onDeleteClick={this.props.onDeleteClick}
+          show={this.props.show}
         />
       </div>
     );
@@ -24,7 +25,8 @@ class App extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    todos: state.TodoReducer
+    todos: state.TodoReducer,
+    show: state.ShowReducer
   }
 }
 

@@ -1,12 +1,12 @@
 import React from 'react'
 
-const Todo = ({ onClick, onDeleteClick, text, done }) => {
+import {showClass} from '../actions/actions'
+
+const Todo = ({ onClick, onDeleteClick, text, done, show }) => {
   return(
     <li
       onClick={onClick}
-      style={{
-        textDecoration: done ? 'line-through' : 'none'
-      }}>
+      className={showClass(done, show)}>
       {text}
       <button onClick={onDeleteClick}>Delete</button>
     </li>
