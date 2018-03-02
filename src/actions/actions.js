@@ -48,7 +48,6 @@ export function showClass(done, show) {
   }
 
   export function changeSorting(newSort) {
-    console.log("hello", newSort);
     switch (newSort) {
       case "ascend":
         return{
@@ -65,6 +64,27 @@ export function showClass(done, show) {
       default:
         return{
           type: 'ORDER_ACEND'
+        }
+    }
+  }
+
+  export function setSorting(newSort) {
+    switch (newSort) {
+      case "ascend":
+        return{
+          type: 'SET_ACEND'
+        }
+      case "descend":
+        return{
+          type: 'SET_DESCEND'
+        }
+      case "alpha":
+        return{
+          type: 'SET_ALPHA'
+        }
+      default:
+        return{
+          type: 'SET_ACEND'
         }
     }
   }

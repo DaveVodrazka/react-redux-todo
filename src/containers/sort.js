@@ -1,13 +1,13 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import {changeSorting} from '../actions/actions'
+import {changeSorting, setSorting} from '../actions/actions'
 
 class Sort extends React.Component {
   render() {
     return(
       <form>
-        <select onChange={(e) => this.props.change(e.target.value)}>
+        <select onChange={(e) => (this.props.change(e.target.value), this.props.set(e.target.value))}>
           <option value="ascend">Vzestupně</option>
           <option value="descend">Sestupně</option>
           <option value="alpha">Abecedně</option>
@@ -25,7 +25,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return{
-    change: (text) => { dispatch(changeSorting(text)) }
+    change: (text) => { dispatch(changeSorting(text)) },
+    set: (text) => { dispatch(setSorting(text)) }
   }
 }
 

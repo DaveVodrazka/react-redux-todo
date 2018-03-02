@@ -7,8 +7,8 @@ const Todo = ({ onClick, onDeleteClick, text, done, show }) => {
     <li
       onClick={onClick}
       className={showClass(done, show)}>
-      {text}
       <button onClick={onDeleteClick}>Delete</button>
+      {text}
     </li>
   );
 }

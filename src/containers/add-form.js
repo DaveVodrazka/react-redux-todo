@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import {addTodo} from '../actions/actions'
+import {addTodo, changeSorting} from '../actions/actions'
 
 class AddForm extends React.Component {
   render() {
@@ -9,6 +9,7 @@ class AddForm extends React.Component {
       <form onSubmit={(e) =>{
         e.preventDefault()
         this.props.add(this.refs.userInput.value)
+        this.props.sort(this.props.currentSort)
         this.refs.userInput.value=''
       }}>
         <input type="text" ref="userInput" placeholder="Enter task" autoFocus></input>
@@ -18,10 +19,17 @@ class AddForm extends React.Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapStateToProps = (state) => {
   return {
-    add: (text) => { dispatch(addTodo(text)) }
+    currentSort: state.SortReducer
   }
 }
 
-export default connect(null, mapDispatchToProps)(AddForm);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    add: (text) => { dispatch(addTodo(text)) },
+    sort: (currentSort) => { dispatch(changeSorting(currentSort)) }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddForm);

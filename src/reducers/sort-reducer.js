@@ -1,4 +1,4 @@
-const SortReducer = (state = "alpha", action) => {
+const SortReducer = (state = "ascend", action) => {
   switch (action.type) {
     case 'SET_ASCEND':
       state = "ascend";

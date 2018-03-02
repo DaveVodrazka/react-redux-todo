@@ -25,18 +25,18 @@ const TodoReducer = (state = [], action) => {
     default:
       return state;
     case 'ORDER_ALPHA':
-      state = state.sort(function compareAlpha(a, b) {
+      state = state.slice(0).sort(function compareAlpha(a, b) {
         return (a.text > b.text) ? 1 : ((b.text > a.text) ? -1 : 0);
       });
       return state;
     case 'ORDER_ACEND':
-      state = state.sort(function compareAscend(a, b) {
+      state = state.slice(0).sort(function compareAscend(a, b) {
         return (a.id > b.id) ? 1 : ((b.id > a.id) ? -1 : 0);
       });
       return state;
     case 'ORDER_DESCEND':
-      state = state.sort(function compareDescend(a, b) {
-              return (a.id < b.id) ? 1 : ((b.id < a.id) ? -1 : 0);
+      state = state.slice(0).sort(function compareDescend(a, b) {
+        return (a.id < b.id) ? 1 : ((b.id < a.id) ? -1 : 0);
       });
       return state;
   }
