@@ -5,6 +5,7 @@ import TodoList from '../components/todo-list'
 import AddForm from './add-form'
 import ShowSwitch from './show-switch'
 import {toggleTodo, removeTodo} from '../actions/actions'
+import Sort from './sort'
 
 class App extends React.Component {
   render() {
@@ -12,6 +13,7 @@ class App extends React.Component {
       <div>
         <AddForm />
         <ShowSwitch />
+        <Sort />
         <TodoList
           todos={this.props.todos}
           onTodoClick={this.props.onTodoClick}
@@ -34,6 +36,5 @@ const mapDispatchToProps = {
   onTodoClick: toggleTodo,
   onDeleteClick: removeTodo
 }
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

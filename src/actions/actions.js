@@ -32,17 +32,39 @@ export function toggleTodo(id) {
 
 export function showClass(done, show) {
     if (done) {
-      if (show == "all" || show == "done") {
+      if (show === "all" || show === "done") {
         return "done";
-      } else if (show == "active") {
+      } else if (show === "active") {
         return "hide";
       }
       return "done";
     } else {
-      if (show == "all" || show == "active") {
+      if (show === "all" || show === "active") {
         return "undone";
       } else {
         return "hide";
       }
+    }
+  }
+
+  export function changeSorting(newSort) {
+    console.log("hello", newSort);
+    switch (newSort) {
+      case "ascend":
+        return{
+          type: 'ORDER_ACEND'
+        }
+      case "descend":
+        return{
+          type: 'ORDER_DESCEND'
+        }
+      case "alpha":
+        return{
+          type: 'ORDER_ALPHA'
+        }
+      default:
+        return{
+          type: 'ORDER_ACEND'
+        }
     }
   }
