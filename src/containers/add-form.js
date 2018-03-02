@@ -1,16 +1,22 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import {addTodo, changeSorting} from '../actions/actions'
+import {addTodo, changeSorting, checkInput} from '../actions/actions'
 
 class AddForm extends React.Component {
   render() {
     return(
       <form onSubmit={(e) =>{
         e.preventDefault()
-        this.props.add(this.refs.userInput.value)
-        this.props.sort(this.props.currentSort)
-        this.refs.userInput.value=''
+        if (checkInput(this.refs.userInput.value)) {
+          this.props.add(this.refs.userInput.value)
+          this.props.sort(this.props.currentSort)
+          this.refs.userInput.value=''
+          this.refs.userInput.placeholder='Enter task'
+        } else {
+          this.refs.userInput.value=''
+          this.refs.userInput.placeholder='Neplatná vstup.'
+        }
       }}>
         <input type="text" ref="userInput" placeholder="Enter task" autoFocus></input>
         <button type="submit">Add</button>

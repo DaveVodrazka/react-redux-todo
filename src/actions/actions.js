@@ -88,3 +88,11 @@ export function showClass(done, show) {
         }
     }
   }
+
+  export function checkInput(input) {
+    if(input && (input.indexOf("fuck")===-1)) {
+      return true
+    } else {
+      return false
+    }
+  }

@@ -7,7 +7,10 @@ class Sort extends React.Component {
   render() {
     return(
       <form>
-        <select onChange={(e) => (this.props.change(e.target.value), this.props.set(e.target.value))}>
+        <select onChange={(e) => (
+          this.props.change(e.target.value),
+          this.props.set(e.target.value)
+        )}>
           <option value="ascend">Vzestupně</option>
           <option value="descend">Sestupně</option>
           <option value="alpha">Abecedně</option>

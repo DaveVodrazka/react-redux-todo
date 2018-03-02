@@ -7,7 +7,6 @@ class ShowSwitch extends React.Component {
   render() {
     return(
       <div>
-        {this.props.show}
         <button className={isActive("all", this.props.show)} onClick={this.props.all}>All</button>
         <button className={isActive("active", this.props.show)} onClick={this.props.active}>Active</button>
         <button className={isActive("done", this.props.show)} onClick={this.props.done}>Done</button>
