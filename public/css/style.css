@@ -1,8 +1,91 @@
-body {
+* {
+  font-family: sans-serif;
   margin: 0;
   padding: 0;
+  color: #252839;
+  font-size: 14px;
+  font-weight: 200;
 }
-h1 {
-  color: yellow;
-  background-color: blue;
+header {
+  text-align: center;
+  background-color: #252839;
+  padding: 10px 10px;
+}
+header h1 {
+  font-size: 32px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #f2b632;
+  padding: 15px 0;
+}
+header div.forms {
+  overflow: hidden;
+  max-width: 1024px;
+  margin: auto;
+}
+header div.forms form.add-form input {
+  width: 75%;
+  box-sizing: border-box;
+  height: 30px;
+  border: 1px solid #677077;
+  color: #252839;
+}
+header div.forms form.add-form button {
+  width: 25%;
+  box-sizing: border-box;
+  height: 30px;
+  border: 1px solid #677077;
+  background-color: #b5b5b7;
+}
+header div.forms div.show-buttons-container {
+  float: right;
+  width: 75%;
+  box-sizing: border-box;
+}
+header div.forms div.show-buttons-container button {
+  width: 33.33%;
+  width: calc(100%/3);
+  height: 30px;
+  border: 1px solid #677077;
+  background-color: #b5b5b7;
+}
+header div.forms div.show-buttons-container button.showBtnActive {
+  background-color: #677077;
+}
+header div.forms form.select-form {
+  box-sizing: border-box;
+  float: left;
+  width: 25%;
+}
+header div.forms form.select-form select {
+  width: 100%;
+  height: 30px;
+  border: 1px solid #677077;
+  color: #252839;
+}
+div.list-of-todos {
+  max-width: 1024px;
+  margin: auto;
+  padding: 10px 0;
+}
+div.list-of-todos ul {
+  list-style: none;
+}
+div.list-of-todos ul li {
+  cursor: pointer;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+div.list-of-todos ul li button.delete {
+  background: none;
+  border: 2px solid #252839;
+  border-radius: 100%;
+  padding: 0 3px;
+  margin-right: 10px;
+}
+div.list-of-todos ul li.done {
+  text-decoration: line-through;
+}
+div.list-of-todos ul li.hide {
+  display: none;
 }

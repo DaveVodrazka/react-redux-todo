@@ -6,20 +6,21 @@ import {addTodo, changeSorting, checkInput} from '../actions/actions'
 class AddForm extends React.Component {
   render() {
     return(
-      <form onSubmit={(e) =>{
+      <form className="add-form"
+      onSubmit={(e) =>{
         e.preventDefault()
         if (checkInput(this.refs.userInput.value)) {
           this.props.add(this.refs.userInput.value)
           this.props.sort(this.props.currentSort)
           this.refs.userInput.value=''
-          this.refs.userInput.placeholder='Enter task'
+          this.refs.userInput.placeholder='Nový úkol'
         } else {
           this.refs.userInput.value=''
-          this.refs.userInput.placeholder='Neplatná vstup.'
+          this.refs.userInput.placeholder='Neplatná vstup'
         }
       }}>
-        <input type="text" ref="userInput" placeholder="Enter task" autoFocus></input>
-        <button type="submit">Add</button>
+        <input type="text" ref="userInput" placeholder="Nový úkol" autoFocus></input>
+        <button type="submit">Přidat</button>
       </form>
     );
   }

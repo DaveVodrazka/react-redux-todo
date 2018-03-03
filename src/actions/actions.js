@@ -1,4 +1,5 @@
-let todoId = 0
+let todoId = JSON.parse(localStorage.getItem("todoStorage")).length || 0
+
 export function addTodo(text) {
   return{
     type: 'ADD_TODO',
@@ -89,6 +90,12 @@ export function showClass(done, show) {
     }
   }
 
+  export function reIndex() {
+    return{
+      type: 'RE_INDEX'
+    }
+  }
+
   export function checkInput(input) {
     if(input && (input.indexOf("fuck")===-1)) {
       return true
@@ -96,3 +103,17 @@ export function showClass(done, show) {
       return false
     }
   }
+
+export function loadState() {
+  if (localStorage.getItem("todoStorage") === null) {
+    return []
+  } else {
+    try {
+      const loadedState = JSON.parse(localStorage.getItem("todoStorage"))
+      return loadedState
+    } catch(e) {
+      console.log("Failed to restore previous state")
+      return []
+    }
+  }
+}

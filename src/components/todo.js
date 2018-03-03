@@ -7,7 +7,7 @@ const Todo = ({ onClick, onDeleteClick, text, done, show }) => {
     <li
       onClick={onClick}
       className={showClass(done, show)}>
-      <button onClick={onDeleteClick}>Delete</button>
+      <button className="delete" onClick={onDeleteClick}>X</button>
       {text}
     </li>
   );

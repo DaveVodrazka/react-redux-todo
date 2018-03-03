@@ -4,6 +4,7 @@ import Todo from './todo'
 
 const TodoList = ({ show, todos, onTodoClick, onDeleteClick }) => {
   return(
+    <div className="list-of-todos">
     <ul>
       {todos.map((todo) => (
         <Todo
@@ -16,6 +17,7 @@ const TodoList = ({ show, todos, onTodoClick, onDeleteClick }) => {
         />
       ))}
     </ul>
+    </div>
   );
 }
 

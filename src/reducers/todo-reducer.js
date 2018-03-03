@@ -1,4 +1,6 @@
-const TodoReducer = (state = [], action) => {
+import {loadState} from '../actions/actions'
+
+const TodoReducer = (state = loadState(), action) => {
   switch (action.type) {
     case 'ADD_TODO':
       state = [
@@ -10,6 +12,7 @@ const TodoReducer = (state = [], action) => {
         }
       ]
       return state;
+
     case 'REMOVE_TODO':
       const index = state.findIndex(x => x.id === action.id);
       state = [
@@ -17,6 +20,7 @@ const TodoReducer = (state = [], action) => {
         ...state.slice(index+1)
       ]
       return state;
+
     case 'TOGGLE_DONE':
       state = state.map(todo =>
         (action.id === todo.id) ? {...todo, done: !todo.done} : todo
@@ -24,21 +28,34 @@ const TodoReducer = (state = [], action) => {
       return state;
     default:
       return state;
+
     case 'ORDER_ALPHA':
       state = state.slice(0).sort(function compareAlpha(a, b) {
         return (a.text > b.text) ? 1 : ((b.text > a.text) ? -1 : 0);
-      });
-      return state;
+      })
+      return state
+
     case 'ORDER_ACEND':
       state = state.slice(0).sort(function compareAscend(a, b) {
         return (a.id > b.id) ? 1 : ((b.id > a.id) ? -1 : 0);
-      });
-      return state;
+      })
+      return state
+
     case 'ORDER_DESCEND':
       state = state.slice(0).sort(function compareDescend(a, b) {
         return (a.id < b.id) ? 1 : ((b.id < a.id) ? -1 : 0);
-      });
-      return state;
+      })
+      return state
+
+    case 'RE_INDEX':
+      state = state.slice(0).sort(function compareAscend(a, b) {
+        return (a.id > b.id) ? 1 : ((b.id > a.id) ? -1 : 0);
+      })
+      for (var i = 0; i < state.length; i++) {
+        state[i].id = i
+      }
+      localStorage.setItem("check", "I have been re-indexed")
+      return state
   }
 }
 

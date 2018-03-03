@@ -1,9 +1,102 @@
-body{
+@inside-max-width:1024px;
+@element-height:30px;
+@background-col:#252839;
+@col1:#b5b5b7;
+@col2:#677077;
+@col3:#f2b632;
+
+*{
+  font-family: sans-serif;
   margin: 0;
   padding: 0;
+  color: @background-col;
+  font-size: 14px;
+  font-weight: 200;
 }
 
-h1{
-  color: yellow;
-  background-color: blue;
+header{
+  text-align: center;
+  background-color: @background-col;
+  padding: 10px 10px;
+  h1{
+    font-size: 32px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: @col3;
+    padding: 15px 0;
+  }
+  div.forms{
+    overflow: hidden;
+    max-width: @inside-max-width;
+    margin: auto;
+    form.add-form{
+      input{
+        width: 75%;
+        box-sizing: border-box;
+        height: @element-height;
+        border: 1px solid @col2;
+        color: @background-col;
+      }
+      button{
+        width: 25%;
+        box-sizing: border-box;
+        height: @element-height;
+        border: 1px solid @col2;
+        background-color: @col1;
+      }
+    }
+    div.show-buttons-container{
+      float: right;
+      width: 75%;
+      box-sizing: border-box;
+      button{
+        width: 33.33%;
+        width: calc(100%/3);
+        height: @element-height;
+        border: 1px solid @col2;
+        background-color: @col1;
+      }
+      button.showBtnActive{
+        background-color: @col2;
+      }
+    }
+    form.select-form{
+      box-sizing: border-box;
+      float: left;
+      width: 25%;
+      select{
+        width: 100%;
+        height: @element-height;
+        border: 1px solid @col2;
+        color: @background-col;
+      }
+    }
+  }
+}
+
+div.list-of-todos{
+  max-width: @inside-max-width;
+  margin: auto;
+  padding: 10px 0;
+  ul{
+    list-style: none;
+    li{
+      cursor: pointer;
+      font-size: 18px;
+      margin-bottom: 5px;
+      button.delete{
+        background: none;
+        border: 2px solid @background-col;
+        border-radius: 100%;
+        padding: 0 3px;
+        margin-right: 10px;
+      }
+    }
+    li.done{
+      text-decoration: line-through;
+    }
+    li.hide{
+      display: none;
+    }
+  }
 }

@@ -6,7 +6,7 @@ import {changeSorting, setSorting} from '../actions/actions'
 class Sort extends React.Component {
   render() {
     return(
-      <form>
+      <form className="select-form">
         <select onChange={(e) => (
           this.props.change(e.target.value),
           this.props.set(e.target.value)
