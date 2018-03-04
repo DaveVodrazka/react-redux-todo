@@ -51,6 +51,7 @@ header div.forms div.show-buttons-container button {
 }
 header div.forms div.show-buttons-container button.showBtnActive {
   background-color: #677077;
+  color: white;
 }
 header div.forms form.select-form {
   box-sizing: border-box;

@@ -34,16 +34,16 @@ export function toggleTodo(id) {
 export function showClass(done, show) {
     if (done) {
       if (show === "all" || show === "done") {
-        return "done";
+        return "done"
       } else if (show === "active") {
-        return "hide";
+        return "hide"
       }
-      return "done";
+      return "done"
     } else {
       if (show === "all" || show === "active") {
-        return "undone";
+        return "undone"
       } else {
-        return "hide";
+        return "hide"
       }
     }
   }

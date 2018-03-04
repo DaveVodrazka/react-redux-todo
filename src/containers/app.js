@@ -9,8 +9,8 @@ import Sort from './sort'
 
 class App extends React.Component {
   constructor(props) {
-  super(props);
-  this.onUnload = this.onUnload.bind(this);
+  super(props)
+  this.onUnload = this.onUnload.bind(this)
   }
 
   render() {
@@ -62,4 +62,4 @@ const mapDispatchToProps = {
   reIndex
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App)

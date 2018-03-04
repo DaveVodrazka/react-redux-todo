@@ -16,7 +16,7 @@ class Sort extends React.Component {
           <option value="alpha">Abecedně</option>
         </select>
       </form>
-    );
+    )
   }
 }
 
@@ -33,4 +33,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Sort);
+export default connect(mapStateToProps, mapDispatchToProps)(Sort)

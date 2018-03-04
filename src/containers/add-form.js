@@ -22,7 +22,7 @@ class AddForm extends React.Component {
         <input type="text" ref="userInput" placeholder="Nový úkol" autoFocus></input>
         <button type="submit">Přidat</button>
       </form>
-    );
+    )
   }
 }
 
@@ -39,4 +39,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddForm);
+export default connect(mapStateToProps, mapDispatchToProps)(AddForm)

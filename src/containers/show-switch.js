@@ -11,7 +11,7 @@ class ShowSwitch extends React.Component {
         <button className={isActive("active", this.props.show)} onClick={this.props.active}>Aktivní</button>
         <button className={isActive("done", this.props.show)} onClick={this.props.done}>Hotové</button>
       </div>
-    );
+    )
   }
 }
 
@@ -29,4 +29,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ShowSwitch);
+export default connect(mapStateToProps, mapDispatchToProps)(ShowSwitch)
