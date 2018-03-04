@@ -1,4 +1,4 @@
-let todoId = JSON.parse(localStorage.getItem("todoStorage")).length || 0
+let todoId = (JSON.parse(localStorage.getItem("todoStorage")) || 0).length
 
 export function addTodo(text) {
   return{
